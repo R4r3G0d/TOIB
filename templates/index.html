@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CWE-821 Vulnerable App</title>
+</head>
+<body>
+    <h1>CWE-821 Vulnerable App</h1>
+    <button id="increment">Increment</button>
+    
+    <p id="counter">Counter: {{ counter }}</p>
+
+    <script>
+        document.getElementById('increment').addEventListener('click', function() {
+            fetch('/increment', {method: 'POST'})
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        });
+
+
+    </script>
+</body>
+</html>
